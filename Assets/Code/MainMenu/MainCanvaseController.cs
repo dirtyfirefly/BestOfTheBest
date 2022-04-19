@@ -33,12 +33,7 @@ public class MainCanvaseController : ControllerBase
 		var camera = _sceneManager.FindObjectOnScene<Camera>();
 		_canvaseView.SetCamera(camera);
 
-
-		// todo: add when we create more levels: () => _menuEventAggregator.LevelsPanelClicked.Invoke()
 		_canvaseView.LevelsButtonClicked.AddListener(OnLevelsButtonClicked);
-		//_menuEventAggregator.LevelClicked.AddListener(() => _canvaseView.ToGameMenu());
-
-		CreateLevelsController();
 	}
 
 	public override void OnStop()
@@ -47,17 +42,9 @@ public class MainCanvaseController : ControllerBase
 		_sceneManager.DestroyObject(_canvase);
 	}
 
-	private void CreateLevelsController()
-	{
-		var parameters = new LevelsMenuController.Parameters(_canvaseView.LevelsPlaceholder);
-
-		var controller = _controllerFactory.CrateControllerWithParameters<LevelsMenuController, LevelsMenuController.Parameters>(parameters);
-		AddController(controller);
-	}
-
 	private void OnLevelsButtonClicked()
 	{
-		_canvaseView.ToGameMenu();
 		_roundEventAggregator.LevelOpend.Invoke(0); // add random when we make more levels
+		Debug.Log("Yeah!");
 	}
 }

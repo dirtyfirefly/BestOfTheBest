@@ -15,19 +15,6 @@ public class MainCanvaseView : MonoBehaviour, IMainCanvaseView
 		canvase.worldCamera = camera;
 	}
 
-	public void ToGameMenu()
-	{
-		gameObject.SetActive(false);
-		// hide lobby menu
-		// show game menu
-	}
-
-	public void ToLobbyMenu()
-	{
-		// hide game menu
-		// show lobby menu
-	}
-
 	public void OnLevelsButtonClicked()
 	{
 		LevelsButtonClicked.Invoke();
