@@ -7,6 +7,4 @@ public interface IMainCanvaseView
 	UnityEvent LevelsButtonClicked { get; }
 
 	void SetCamera(Camera camera);
-	void ToGameMenu();
-	void ToLobbyMenu();
 }
